@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>I Let The Dogs Out</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/707eceb231.js" crossorigin="anonymous"></script>
+
+    <style>
+      :root{
+        --gold: rgba(215, 173, 97, 1);
+        --brown: rgba(87, 59, 53, 1);
+        /*--gold: rgba(87, 59, 53, 1);
+        --brown: rgba(215, 173, 97, 1);*/
+
+      }
+
+        *{
+          padding:0;
+          margin: 0;
+          text-decoration: none;
+          list-style: none;
+          box-sizing: border-box;
+        }
+
+         /* Red border to check items */
+        .check{ border: 1px solid red;}
+
+        body{
+         width: 100%;
+         height: 100%;
+         font-family: sans-serif;
+         font-family: 'Montserrat';
+        }
+
+        /* Start Baner Styling */
+
+        .banner{
+          display: block;
+          position: fixed;
+          height: 100vh;
+          width: 100%;
+          background-image: url("images/bkg1.jpg");
+          background-size: cover;
+          background-position: center;
+          z-index:1000;
+        }
+
+        .banner-shadow{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+          height: inherit;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+        .banner-content{
+          z-index:998;
+          height: auto;
+          width:60%;
+          text-align:center;
+          padding: 30px;
+          border-radius: 15px;
+          color: #fff;
+          background-color: var(--gold);
+
+        }
+
+        .logo{
+          height:200px;
+          width: auto;
+          /*box-shadow: 0 0 2px 2px var(--gold);*/
+        }
+
+        p{
+          text-align: center;
+          font-size: 15px;
+        }
+
+        a {
+          color: #fff;
+          transition: all .3s !important;
+          font-size: 15px;
+        }
+
+        a:hover{
+          color: var(--brown);
+        }
+
+        a i{
+          color: var(--brown);
+          font-size: 20px;
+          padding: 5px;
+        }
+
+        a .fa-phone{
+          transform: rotate(90deg);
+        }
+
+        .hrBar{
+          margin: 1% auto;
+          border: 0;
+          border-top: 2px solid var(--brown);
+          width: 30%;
+        }
+
+        @media (max-width: 858px){
+          .banner, .banner-shadow {
+            height: 100%;
+          }
+
+          .banner-content{
+            width: 90%;
+            font-size: 12px;
+          }
+
+        }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="banner">
+      <div class="banner-shadow">
+
+
+        <div class="banner-content">
+          <img class="logo" src="images/ILTDOLogo-Brown.png" alt="I Let The Dogs Out Logo"><br />
+
+          <h3>We're working on it...</h3>
+          <hr class="hrBar"><br />
+            <p>In the meantime, reach out to us on social media or by you preferred method below. If you have any questions or would like to schedule service.</p><br /><br />
+            <div class="info">
+                  <h4>Contact Us</h4>
+                  <hr class="hrBar">
+                    <a href="#"><i class="fas fa-phone"></i>: 7327723670</a><br />
+                    <a href="#"><i class="fas fa-envelope"></i>: iletthedogsoutnj@gmail.com</a><br />
+                    <a href="#"><i class="fab fa-facebook"></i>@iletthedogsoutnj</a><br />
+                      <a href="#"><i class="fab fa-instagram"></i>@iletthedogsoutnj</a>
+            </div>
+        </div><!-- End Banner Content -->
+
+
+      </div>
+    </div>
+
+  </body>
+</html>
