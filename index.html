@@ -6,10 +6,47 @@
     <title>I Let The Dogs Out</title>
     <!-- External Stylesheet "styles.css" -->
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-        <!-- Start JS Scripts -->
-    <script>
 
+    <script src="https://kit.fontawesome.com/707eceb231.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+        <!-- Start JS Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+       $(document).ready(function(){
+
+         var sideMenu = false;
+
+         $("#menu-btn").click(function(){
+           if(!sideMenu){
+             //grow menu
+             //Change Hamburgger Icon to X on click
+             $("#small-ul").css('display','flex');
+             $("#small-ul").animate({height: "150px"});
+             $("#btnBar1").css("transform", "rotate(45deg) translateY(4px)");
+             $("#btnBar2").css("display", "none");
+             $("#btnBar3").css("transform","rotate(-45deg) translateY(-4px)");
+             $(".navbar").css("border-bottom","2px solid var(--gold)");
+             sideMenu = true;
+           }else{
+              //shrink/hide menu
+              $("#btnBar1").css("transform", "rotate(0deg)");
+              $("#btnBar2").css("display", "block");
+              $("#btnBar3").css("transform", "rotate(0deg)");
+              $("#small-ul").animate({height: "0px"}, function(){
+                $("#small-ul").css('display','none');
+              });
+              $(".navbar").css("border-bottom","none");
+              sideMenu = false;
+           }//End If/Else to show and hide navbar
+
+           //Change Hamburgger Icon to X on click
+
+
+         });//End Menu-btn function
+
+       });//End Document.ready()
     </script>
 
   </head>
@@ -17,32 +54,164 @@
                   <!-- End Head/Start Body -->
 
   <body>
+    <section class="section1">
 
-    <!--<video autoplay muted loop id="bkg-vid">
-      <source src="images/bkg-vid.mp4" type="video/mp4">
-    </video>-->
+    <div class="navbar">
 
-      <div class="banner">
-        <nav>
-          <input type="checkbox" id="menu-btn">
-          <label for="menu-btn" id="menu-btn-icon">=</label>
+          <a class="logo" href="#">
+              <img src="images/ILTDOLogo-Gold2.png" />
+          </a>
 
-          <div class="logo">
-              <a  class="logo-a check" href="#"><img src="images/ILTDOLogo-Gold.png" /></a>
-          </div><!-- End Logo Div -->
-          <ul>
-            <li><a href= "#">Home</a></li>
-            <li><a href= "#">About</a></li>
-            <li><a href= "#">Schedule</a></li>
-          </ul>
-        </nav>
-      </div><!-- End Banner -->
+          <nav>
 
-      <div class="form">
-        <form class="schedule" action="#" method="post">
-          This is test text...
-        </form>
+            <div class="menu-btn" id="menu-btn">
+              <hr class="menu-btn-bar" id="btnBar1"/>
+              <hr class="menu-btn-bar" id="btnBar2"/>
+              <hr class="menu-btn-bar" id="btnBar3"/>
+            </div>
+
+            <ul class="large-ul">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+
+          </nav>
+
+    </div>
+
+            <ul class="small-ul" id="small-ul">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+
+      <div class="banner-content">
+          <div class="banner-content-wrapper">
+              <h1>I Let The Dogs Out</h1><br />
+                  <hr class="banner-hrBar"/><br />
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br /><br />
+                <a class="action-btn" href="#schedule">Schedule Now</a>
+          </div>
       </div>
+</section><!-- End section 1 -->
+
+<section class="section2">
+      <div class="info-box info-box-1">
+        <h1>Our Services</h1><br />
+        <hr class="banner-hrBar"/><br />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+      <div class="services">
+        <div class="services-card">
+          <h3>Walking</h3>
+          <p>We can stop by, walk, feed, and play with your pet for up to an hour.</p>
+        </div>
+        <div class="services-card">
+          <h3>Sitting</h3>
+          <p>We can stay at your home with your pup for several days at time.</p>
+        </div>
+        <div class="services-card">
+          <h3>Service</h3>
+          <p>Your dog needs servie right? We can help!</p>
+        </div>
+      </div>
+
+
+      <!--<div class=" info-box info-box-2">
+        <h2>Sitting</h2><br />
+        <hr class="banner-hrBar"/><br />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>-->
+</section><!-- End Section2 -->
+
+
+<section class="section3">
+
+  <div class="info-box info-box-1">
+
+    <h1>Schedule Service</h1><br />
+    <hr class="banner-hrBar"/><br />
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+  </div>
+
+  <form class="schedule-form" action="#" method="post">
+
+    <div class="form-group input-group">
+      <label for="fname">First Name:</label>
+      <input type="text" name="fname" value="" placeholder="First Name"/>
+    </div>
+
+    <div class="form-group input-group">
+      <label for="fname">Last Name:</label>
+      <input type="text" name="lname" value="" placeholder="Last Name"/>
+    </div>
+
+    <div class="form-group input-group">
+      <label for="fname">Pets name:</label>
+      <input type="text" name="pname" value="" placeholder="Pets Name"/>
+    </div>
+
+    <div class="form-group form-submit-btn">
+      <input type="submit" placeholder="Submit"/>
+    </div>
+
+  </form>
+  <!--
+  <div class="form-info">
+    <h2>Whats Available</h2><br />
+    <hr class="banner-hrBar"/><br />
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>-->
+</section>
+
+<section class="section4">
+  <div class="message">
+    <p>Test</p>
+  </div>
+  <div class="">
+    <img src="images/ILTDOLogo-Gold2.png" alt="">
+  </div>
+    <div class="socials">
+      <a href="tel:7326643119"><i class="fas fa-phone"></i></a>
+      <a href="mailto:iletthedogsoutnj@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.facebook.com/bocchieri" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/iletthedogsoutnj/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- I NEEDED SPACEEEEE :D -->
+
+
+
+
+
+
+
 
 
 

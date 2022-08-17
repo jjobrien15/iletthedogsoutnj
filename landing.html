@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>I Let The Dogs Out</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/707eceb231.js" crossorigin="anonymous"></script>
 
     <style>
+    @import url(https://fonts.googleapis.com/css?family=Tangerine);
       :root{
         --gold: rgba(215, 173, 97, 1);
         --brown: rgba(87, 59, 53, 1);
@@ -21,7 +23,6 @@
           margin: 0;
           text-decoration: none;
           list-style: none;
-          box-sizing: border-box;
         }
 
          /* Red border to check items */
@@ -29,124 +30,141 @@
 
         body{
          width: 100%;
-         height: 100%;
-         font-family: sans-serif;
-         font-family: 'Montserrat';
+         height: 100vh;
+         max-height: 100vh;
+         color: #FFF !important;
+         font-family: 'Montserrat', sans-serif;
+         background-image: url("images/bkg1.jpg");
+         background-position: center;
+         background-size: cover;
         }
 
-        /* Start Baner Styling */
-
-        .banner{
-          display: block;
-          position: fixed;
-          height: 100vh;
-          width: 100%;
-          background-image: url("images/bkg1.jpg");
-          background-size: cover;
-          background-position: center;
-          z-index:1000;
+        .container{
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+          justify-content: space-between !important;
+          height: inherit;
+          text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
         }
 
-        .banner-shadow{
+        .header-div{
           display: flex;
           justify-content: center;
           align-items: center;
-          z-index: 999;
-          height: inherit;
+          flex-direction: column;
           width: 100%;
-          background-color: rgba(0, 0, 0, 0.8);
-        }
-
-
-        .banner-content{
-          z-index:998;
-          height: auto;
-          width:60%;
-          text-align:center;
-          padding: 30px;
-          border-radius: 15px;
-          color: #fff;
-          background-color: var(--gold);
-
+          margin-top: 5%;
         }
 
         .logo{
-          height:200px;
-          width: auto;
-          /*box-shadow: 0 0 2px 2px var(--gold);*/
+          height: 10em !important;
         }
 
-        p{
+        .message{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          align-self: center;
           text-align: center;
-          font-size: 15px;
+          margin-bottom: 5%;
         }
 
-        a {
-          color: #fff;
-          transition: all .3s !important;
-          font-size: 15px;
+        .socials{
+          display: flex;
+          justify-content: center;
         }
 
-        a:hover{
-          color: var(--brown);
+        .quote{
+          align-self: center;
+          font-family: 'Tangerine', cursive !important;
         }
 
-        a i{
-          color: var(--brown);
-          font-size: 20px;
-          padding: 5px;
-        }
+         h1, h2, h3, h4{
+           color: #fff;
+           font-family: 'Fjalla One', sans-serif;
+         }
 
-        a .fa-phone{
-          transform: rotate(90deg);
-        }
+         i{
+           padding: 10px;
+           font-size: 22px;
+           color: #FFF;
+         }
 
-        .hrBar{
-          margin: 1% auto;
-          border: 0;
-          border-top: 2px solid var(--brown);
-          width: 30%;
-        }
+         a i{color: var(--gold);}
 
-        @media (max-width: 858px){
-          .banner, .banner-shadow {
-            height: 100%;
+         a i:hover{
+           transition: .3s all;
+           color: var(--brown);
+         }
+
+         p{
+           font-size: 14px;
+         }
+
+        @media screen and (max-width: 956px){
+
+          .header-div{
+            margin-top: 15%;
           }
 
-          .banner-content{
+          .logo{
+            height: 8em !important;
+          }
+
+          .message{
             width: 90%;
-            font-size: 12px;
+            margin-bottom: 20%;
           }
 
         }
+
+        hr, .hrBar{
+          background-color: var(--gold) !important;
+          align-self: center;
+          width: 20px;
+          height: 1px;
+          border:none;
+          margin: 10px;
+        }
+
     </style>
 
   </head>
+
+
   <body>
+    <div class="container">
+            <div class="header-div">
+              <img class="logo" src="images/ILTDOLogo-Gold2.png" alt="I Let The Dogs Out Logo"/>
+            </div>
 
-    <div class="banner">
-      <div class="banner-shadow">
+            <div class="message">
+              <h2>We're working on our website...</h2>
+              <p>In the meantime, choose a method below to
+                contact use with any questions or schedule a sitting.</p><br />
+                    <div class="socials">
+                      <hr class="hrBar">
+                      <a href="tel:7326643119"><i class="fas fa-phone"></i></a>
+                      <a href="mailto:iletthedogsoutnj@gmail.com"><i class="fas fa-envelope"></i></a>
+                      <a href="https://www.facebook.com/bocchieri" target="_blank"><i class="fab fa-facebook"></i></a>
+                      <a href="https://www.instagram.com/iletthedogsoutnj/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      <hr class="hrBar">
+                    </div><br />
+                <div class="quote">
+                  <p>In memory of Janet Byrne</p>
+                </div>
+            </div>
 
-
-        <div class="banner-content">
-          <img class="logo" src="images/ILTDOLogo-Brown.png" alt="I Let The Dogs Out Logo"><br />
-
-          <h3>We're working on it...</h3>
-          <hr class="hrBar"><br />
-            <p>In the meantime, reach out to us on social media or by you preferred method below. If you have any questions or would like to schedule service.</p><br /><br />
+            <!--
             <div class="info">
                   <h4>Contact Us</h4>
-                  <hr class="hrBar">
-                    <a href="#"><i class="fas fa-phone"></i>: 7327723670</a><br />
-                    <a href="#"><i class="fas fa-envelope"></i>: iletthedogsoutnj@gmail.com</a><br />
-                    <a href="#"><i class="fab fa-facebook"></i>@iletthedogsoutnj</a><br />
-                      <a href="#"><i class="fab fa-instagram"></i>@iletthedogsoutnj</a>
-            </div>
-        </div><!-- End Banner Content -->
-
-
-      </div>
-    </div>
-
+                    <a href="#"><i class="fas fa-phone"></i>: 7327723670</a>
+                    <a href="#"><i class="fas fa-envelope"></i>: iletthedogsoutnj@gmail.com</a<br />
+                    <a href="#"><i class="fab fa-facebook"></i>@iletthedogsoutnj</a>
+                    <a href="#"><i class="fab fa-instagram"></i>@iletthedogsoutnj</a>
+                  <p>In memory of Janet Byrne</p>
+            </div>-->
+          </div>
   </body>
 </html>

@@ -1,13 +1,11 @@
 /* External Style Sheet for I Let The Dogs Out NJ */
 
 :root{
-  --container: 10%;
-  --nav-bkg:rgba(0,0,0,0.5) ;
+  --shadow-bkg:rgba(0,0,0,0.5) ;
   --gold: rgba(215, 173, 97, 1);
   --brown: rgba(87, 59, 53, 1);
-  --hover-speed: .3s;
-  --transition-speed: 2s;
   --line-height: 80px;
+  --max-width: 958px;
 }
 
 *{
@@ -25,126 +23,341 @@
 
 body{
  width: 100%;
- height: 100%;
- font-family: sans-serif;
- font-family: 'Montserrat';
+ min-height: 100vh;
+ color: #000 !important;
+ font-family: sans-serif !important;
+ font-family: 'Montserrat'!important;
+}
+
+.section1{
+  color: #fff;
+  background-image: url("images/bkg-home.jpg");
+  background-position: center;
+  background-size: cover;
+  border-bottom: 2px solid var(--gold);
 }
 
 /* Start Baner Styling */
 
-.banner{
-  display: block;
-  position: fixed;
-  height: 100vh;
+.navbar{
   width: 100%;
-  background-image: url("images/bkg1.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/*#bkg-vid {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translateX(calc((100% - 100vw) / 2));
-  z-index:-1000;
-}*/
-/* End Banner Styling */
-/* Begin Navbar styling */
-nav{
   height: var(--line-height);
-  width: 100%;
-  background-color:var(--nav-bkg);
-  color: #fff;
-  z-index: -998;
+  max-height: var(--line-height);
+  display: flex;
+  justify-content: space-around;
+  transition: .5s all !important;
+  background-color: rgba(0,0,0,0.5);
 }
 
 .logo{
-  display: inline-block;
-  width: var(--line-height);
   height: var(--line-height);
-  line-height: var(--line-height);
 }
 
 .logo img{
-  width: auto;
+  padding: 10px;
   height: var(--line-height);
-  padding: 10% 30%;
 }
 
-.logo-a{
-  display: block;
+nav{
+  display: flex;
+  height: inherit;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-nav ul{
-  float: right;
-  margin: 0 var(--container);
+nav .large-ul{
+  display: flex;
 }
 
-nav ul li{
-  display: inline-block;
-  line-height: var(--line-height);
-  margin: 0 5px;
-}
-
-nav ul li a{
-  color:#fff;
-  font-size: 17px;
-  text-transform: uppercase;
-  transition: var(--hover-speed);
-}
-
-nav ul li a:link{
-  color:#fff;
-}
-
-nav ul li a:hover{
-  color:var(--gold);
-}
-
-#menu-btn{
+.small-ul{
   display: none;
 }
 
-#menu-btn-icon{
-  display: none;
-  font-size: 30px;
+nav .large-ul li a{
+  color: var(--gold);
+  font-size: 18px;
+  padding: 10px;
+  margin: auto 20px;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+  transition: .3s all;
+}
+
+nav li a:hover{
   color: #fff;
-  float:right;
-  line-height: var(--line-height);
-  margin-right: var(--container);
-  cursor: pointer;
-  transition: var(--hover-speed);
 }
 
-#menu-btn-icon:hover{
-  color:var(--dark-blue);
+.menu-btn{
+  display: none;
+  padding: 40px;
 }
 
-@media (max-width: 858px){
-  #menu-btn-icon{
-    display: block;
+
+/* Banner Content */
+.banner-content{
+  height: calc(100vh - var(--line-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.banner-content-wrapper{
+  width: 80%;
+  height:auto;
+  align-self:center;
+}
+
+h1, h2, h3, h4{
+  font-family:'Fjalla One', sans-serif;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+}
+
+.action-btn{
+  padding: 15px;
+  border-radius: 10px;
+  color: #000;
+  background-color: var(--gold);
+  box-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+  transition: .3s all;
+}
+
+.action-btn:hover{
+  background-color: var(--brown);
+  color: var(--gold);
+}
+
+.banner-hrBar{
+  margin: 0 auto;
+  border:none;
+  height: 2px;
+  width: 8%;
+  background-color: var(--gold);
+  box-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+  border-radius: 100px;
+}
+
+@media screen and (max-width: 958px){
+
+  .navbar{
+    background-color: rgba(0,0,0,0.5);
+    height: var(--line-height);
+    transition: .5s all;
+    justify-content: space-between;
   }
-  nav ul{
+
+  nav{
+      justify-content: flex-end;
+  }
+
+  nav .large-ul{
     display: none;
-    position: fixed;
-    width: 100%;
-    height: 0;
-    margin: 0 !important;
-    background: var(--nav-bkg);
-    text-align: center;
-    transition: all 7s  !important;
-  }
-  ul li{
-    padding: auto 50px;
   }
 
-  #menu-btn:checked ~ ul{
-    display:block;
-    height: auto;
+  .small-ul{
+    display: none;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    height: 0px;
+    background-color: rgba(0,0,0,0.5);
   }
+
+  .small-ul li a{
+    padding: 15px;
+    color: var(--gold);
+    transition: .3s all;
+  }
+
+  .small-ul li a:hover{
+    color: #fff;
+  }
+
+  .menu-btn{
+    display: block;
+    align-self: center;
+    cursor: pointer;
+  }
+
+  .menu-btn-bar{
+    margin: 4px;
+    width: 18px;
+    height: 2px;
+    background-color: var(--gold);
+    border: none;
+    transition: .3s all;
+  }
+
+  .menu-btn:hover > .menu-btn-bar{
+    background-color: #fff;
+  }
+
+  .banner-hrBar{
+    width: 4%;
+  }
+
+}/* End navbar */
+
+/* End section1 */
+/* Start section2 */
+.section2{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+  color: #000;
+}
+.services{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
-/* End Navbar Styling */
+.services-card{
+  flex:1;
+  text-align: center;
+  padding: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: var(--gold);
+  color: #000;
+  box-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+}
+
+/*.services-card:nth-child(2){
+  margin-left: 20%;
+  margin-right: 20%;
+}*/
+
+.section2 h1, .section2 h3{
+  text-shadow: none;
+}
+
+.section2 i{
+  color: var(--gold);
+  font-size: 25px;
+}
+
+.section2 hr{
+  box-shadow: none;
+}
+
+.info-box{
+  padding: 5%;
+  text-align: center;
+}
+
+@media screen and (max-width: 958px){
+
+  .section2{
+    flex-wrap: wrap;
+  }
+
+  .section2 .services{
+    flex-wrap: wrap;
+  }
+
+}
+
+/* End Section2 */
+/* Start Form/Section 3 */
+.section3{
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  background-color: var(--gold);
+  flex-wrap: nowrap;
+}
+
+.section3 form{
+  background-color: none;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.section3 label{
+  font-weight: bold;
+  /* text-shadow: 2px 3px 3px rgba(0,0,0,0.5); */
+}
+
+.section3 .input-group input{
+  border-radius: 5px;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.form-submit-btn{
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 958px){
+
+  .section3{
+    flex-wrap: wrap;
+  }
+
+}
+
+/* End Section 3 */
+
+/* Start section4/Footer */
+.section4{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: var(--brown);
+  padding: 2%;
+  color: #fff;
+}
+
+.section4 img{
+  padding: 10px;
+  height: var(--line-height);
+}
+
+.section4 .socials{
+  display: flex;
+  justify-content: center;
+}
+
+.section4 .socials a i{
+  padding: 10px;
+  color: #fff;
+}
+
+.section4 .socials a i:hover{
+  color: var(--gold);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* I NEED SPACEEEE, HAI :D */
