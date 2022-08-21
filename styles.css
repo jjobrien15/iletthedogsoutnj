@@ -31,10 +31,11 @@ body{
 
 .section1{
   color: #fff;
-  background-image: url("images/bkg-home.jpg");
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  border-bottom: 2px solid var(--gold);
+  background-image: url("images/bkg2.jpg");
 }
 
 /* Start Baner Styling */
@@ -209,35 +210,37 @@ h1, h2, h3, h4{
   color: #000;
 }
 .services{
+  width:100%;
+  height: auto;
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-around;
 }
 
 .services-card{
-  flex:1;
+  width: 25%;
+  height: 100%;
   text-align: center;
-  padding: 25px;
-  margin-top: 20px;
-  margin-bottom: 20px;
   border-radius: 10px;
   background-color: var(--gold);
-  color: #000;
+  color: #FFF;
   box-shadow: 2px 4px 3px rgba(0,0,0,0.5);
 }
 
-/*.services-card:nth-child(2){
-  margin-left: 20%;
-  margin-right: 20%;
-}*/
+.services-card-content{
+  width: 100%;
+  height: 100%;
+  background-color: black; /* fallback color */
+  background-image: url("images/walking-tile.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.card1{
+
+}
 
 .section2 h1, .section2 h3{
   text-shadow: none;
-}
-
-.section2 i{
-  color: var(--gold);
-  font-size: 25px;
 }
 
 .section2 hr{
@@ -255,8 +258,12 @@ h1, h2, h3, h4{
     flex-wrap: wrap;
   }
 
-  .section2 .services{
+  .services{
     flex-wrap: wrap;
+  }
+
+  .services-card{
+    width: 100%;
   }
 
 }
@@ -266,36 +273,77 @@ h1, h2, h3, h4{
 .section3{
   display: flex;
   justify-content: center;
+  color: #fff;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("images/bkg-home.jpg");
+}
+
+.shadow{
+  background-color: rgba(0,0,0,0.5);
+}
+
+.section3-content{
   padding: 5%;
-  background-color: var(--gold);
-  flex-wrap: nowrap;
+  flex:1;
+}
+
+.section3 h1{
+  text-shadow:none;
 }
 
 .section3 form{
-  background-color: none;
+  background-color: var(--gold);
+  padding: 5%;
+  width: 100%;
   height: auto;
-  display: flex;
+  display: table-cell;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2%;
+  border-radius: 10px;
 }
 
 .section3 label{
   font-weight: bold;
+  color: var(--brown);
   /* text-shadow: 2px 3px 3px rgba(0,0,0,0.5); */
 }
 
+.section3 .input-group{
+  display: table-cell;
+}
+
 .section3 .input-group input{
-  border-radius: 5px;
-  border: 2px solid #000;
+  border: none;
+  border-bottom:2px solid var(--brown);
   margin-bottom: 10px;
   padding: 5px;
   background-color: transparent;
+  color: #fff;
 }
 
-.form-submit-btn{
-  align-self: flex-end;
+.section3 .input-group input:focus{
+  outline:none;
+  border-bottom: 2px solid #fff;
+}
+
+.form-submit-btn input[type=submit]{
+  transition: .3s all;
+  border:2px solid transparent;
+  border-radius: 7px;
+  padding: 15px;
+  color: var(--gold);
+  background: var(--brown);
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.form-submit-btn input[type=submit]:hover{
+  background: var(--gold);
+  border: 2px solid var(--brown);
+  color: var(--brown);
 }
 
 @media screen and (max-width: 958px){
